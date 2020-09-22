@@ -1,7 +1,11 @@
 module.exports = {
   purge: ['./pages/**/*.js'],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'roboto-mono': ['Roboto Mono', 'monospace'],
+      },
+    },
   },
   variants: {},
   plugins: [],
