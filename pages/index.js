@@ -84,7 +84,7 @@ const Home = () => {
         <meta name='description' content='A simple password generator.' />
       </Head>
 
-      <main className='container max-w-2xl mx-auto px-4 font-roboto-mono text-white sm:px-6'>
+      <main className='container max-w-2xl mx-auto px-4 font-roboto-mono text-white touch-action-manipulation sm:px-6'>
         <div className='h-12 sm:h-32' />
 
         <h1 className='text-6xl font-bold text-center'>PWG</h1>

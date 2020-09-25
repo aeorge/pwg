@@ -27,3 +27,9 @@
 @tailwind components;
 
 @tailwind utilities;
+
+@layer utilities {
+  .touch-action-manipulation {
+    touch-action: manipulation;
+  }
+}
