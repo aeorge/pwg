@@ -84,7 +84,7 @@ const Home = () => {
         <meta name='description' content='A simple password generator.' />
       </Head>
 
-      <main className='container max-w-2xl mx-auto px-6 font-roboto-mono text-white'>
+      <main className='container max-w-2xl mx-auto px-4 font-roboto-mono text-white sm:px-6'>
         <div className='h-12 sm:h-32' />
 
         <h1 className='text-6xl font-bold text-center'>PWG</h1>
@@ -97,7 +97,7 @@ const Home = () => {
 
         <div className='h-6 sm:h-12' />
 
-        <div className='flex justify-between items-center w-full h-12 mr-4 pl-4 pr-2 rounded-lg bg-gray-900'>
+        <div className='flex justify-between items-center space-x-2 w-full h-12 pl-4 pr-2 rounded-lg bg-gray-900'>
           <input
             className='w-full bg-transparent tracking-widest truncate outline-none'
             type='text'
@@ -106,7 +106,7 @@ const Home = () => {
             value={password}
           />
           <button
-            className='w-8 h-8 ml-2 cursor-pointer hover:text-green-600 focus:text-green-600 focus:outline-none'
+            className='cursor-pointer transition duration-200 ease-in-out hover:text-green-600 focus:text-green-600 focus:outline-none'
             aria-label='Copy to clipboard'
           >
             <svg
@@ -129,50 +129,47 @@ const Home = () => {
 
         <div className='h-6 sm:h-12' />
 
-        <div className='flex flex-wrap justify-center'>
-          {/* TODO: Add range slider for password length */}
-          <div className='flex w-full mb-4'>
-            <button
-              className={`w-full h-12 mr-2 py-2 px-4 border-2 rounded-lg focus:outline-none ${
-                uppercase && 'border-transparent text-black bg-white'
-              }`}
-              onClick={() => setUppercase(!uppercase)}
-            >
-              uppercase
-            </button>
-            <button
-              className={`w-full h-12 ml-2 py-2 px-4 border-2 rounded-lg focus:outline-none ${
-                lowercase && 'border-transparent text-black bg-white'
-              }`}
-              onClick={() => setLowercase(!lowercase)}
-            >
-              lowercase
-            </button>
-          </div>
-          <div className='flex w-full'>
-            <button
-              className={`w-full h-12 mr-2 py-2 px-4 border-2 rounded-lg focus:outline-none ${
-                numbers && 'border-transparent text-black bg-white'
-              }`}
-              onClick={() => setNumbers(!numbers)}
-            >
-              numbers
-            </button>
-            <button
-              className={`w-full h-12 ml-2 py-2 px-4 border-2 rounded-lg focus:outline-none ${
-                symbols && 'border-transparent text-black bg-white'
-              }`}
-              onClick={() => setSymbols(!symbols)}
-            >
-              symbols
-            </button>
-          </div>
+        {/* TODO: Add range slider for password length */}
+
+        <div className='grid grid-cols-2 gap-4'>
+          <button
+            className={`w-full h-12 px-4 border-2 rounded-lg truncate select-none transition duration-200 ease-in-out focus:outline-none ${
+              uppercase && 'border-transparent text-black bg-white'
+            }`}
+            onClick={() => setUppercase(!uppercase)}
+          >
+            uppercase
+          </button>
+          <button
+            className={`w-full h-12 px-4 border-2 rounded-lg truncate select-none transition duration-200 ease-in-out focus:outline-none ${
+              lowercase && 'border-transparent text-black bg-white'
+            }`}
+            onClick={() => setLowercase(!lowercase)}
+          >
+            lowercase
+          </button>
+          <button
+            className={`w-full h-12 px-4 border-2 rounded-lg truncate select-none transition duration-200 ease-in-out focus:outline-none ${
+              numbers && 'border-transparent text-black bg-white'
+            }`}
+            onClick={() => setNumbers(!numbers)}
+          >
+            numbers
+          </button>
+          <button
+            className={`w-full h-12 px-4 border-2 rounded-lg truncate select-none transition duration-200 ease-in-out focus:outline-none ${
+              symbols && 'border-transparent text-black bg-white'
+            }`}
+            onClick={() => setSymbols(!symbols)}
+          >
+            symbols
+          </button>
         </div>
 
         <div className='h-6 sm:h-12' />
 
         <button
-          className='w-full h-12 border-2 rounded-lg hover:border-transparent hover:bg-green-600 focus:border-transparent focus:bg-green-600 focus:outline-none'
+          className='w-full h-12 px-4 rounded-lg bg-green-700 truncate select-none transition duration-200 ease-in-out hover:bg-green-600 focus:bg-green-600 focus:outline-none'
           onClick={() => generatePassword()}
         >
           Generate
@@ -183,4 +180,5 @@ const Home = () => {
     </div>
   )
 }
+
 export default Home
