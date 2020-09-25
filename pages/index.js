@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import Head from 'next/head'
 
 const Home = () => {
@@ -8,6 +8,9 @@ const Home = () => {
   const [numbers, setNumbers] = useState(true)
   const [symbols, setSymbols] = useState(true)
   const [password, setPassword] = useState('')
+
+  const copyButtonRef = useRef(null)
+  const generateButtonRef = useRef(null)
 
   // Generate random uppercase character
   const getRandomUpper = () => {
@@ -108,10 +111,14 @@ const Home = () => {
           <button
             className='cursor-pointer transition duration-200 ease-in-out hoverable:hover:text-green-600 focus:text-green-600 focus:outline-none'
             aria-label='Copy to clipboard'
+            onClick={() => {
+              copyToClipboard()
+              copyButtonRef.current.blur()
+            }}
+            ref={copyButtonRef}
           >
             <svg
               className='w-8 h-8'
-              onClick={() => copyToClipboard()}
               xmlns='http://www.w3.org/2000/svg'
               fill='none'
               viewBox='0 0 24 24'
@@ -170,7 +177,11 @@ const Home = () => {
 
         <button
           className='w-full h-12 px-4 rounded-lg bg-green-700 truncate select-none transition duration-200 ease-in-out hoverable:hover:bg-green-600 focus:bg-green-600 focus:outline-none'
-          onClick={() => generatePassword()}
+          onClick={() => {
+            generatePassword()
+            generateButtonRef.current.blur()
+          }}
+          ref={generateButtonRef}
         >
           Generate
         </button>
