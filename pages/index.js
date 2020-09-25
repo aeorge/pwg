@@ -106,7 +106,7 @@ const Home = () => {
             value={password}
           />
           <button
-            className='cursor-pointer transition duration-200 ease-in-out hover:text-green-600 focus:text-green-600 focus:outline-none'
+            className='cursor-pointer transition duration-200 ease-in-out hoverable:hover:text-green-600 focus:text-green-600 focus:outline-none'
             aria-label='Copy to clipboard'
           >
             <svg
@@ -169,7 +169,7 @@ const Home = () => {
         <div className='h-6 sm:h-12' />
 
         <button
-          className='w-full h-12 px-4 rounded-lg bg-green-700 truncate select-none transition duration-200 ease-in-out hover:bg-green-600 focus:bg-green-600 focus:outline-none'
+          className='w-full h-12 px-4 rounded-lg bg-green-700 truncate select-none transition duration-200 ease-in-out hoverable:hover:bg-green-600 focus:bg-green-600 focus:outline-none'
           onClick={() => generatePassword()}
         >
           Generate
