@@ -114,7 +114,7 @@ const Home = () => {
           <input
             className='w-full bg-transparent tracking-widest truncate outline-none'
             type='text'
-            aria-label='Password'
+            aria-label='Generated password'
             readOnly
             value={password}
             ref={passwordField}
@@ -148,8 +148,7 @@ const Home = () => {
           <input
             className='appearance-none w-full h-2 rounded-full cursor-pointer focus:outline-none'
             type='range'
-            name='slider'
-            id='slider'
+            aria-label='Slider for password length'
             min='8'
             max='40'
             onChange={() => {
