@@ -9,6 +9,7 @@ const Home = () => {
   const [symbols, setSymbols] = useState(true)
   const [password, setPassword] = useState('')
 
+  const passwordField = useRef(null)
   const copyButtonRef = useRef(null)
   const sliderRef = useRef(null)
   const generateButtonRef = useRef(null)
@@ -75,10 +76,18 @@ const Home = () => {
   }
 
   const copyToClipboard = async () => {
-    // TODO: Add success and error notification
-    try {
-      await navigator.clipboard.writeText(password)
-    } catch (error) {}
+    if (password) {
+      try {
+        await navigator.clipboard.writeText(password)
+        passwordField.current.value = 'Copied!'
+      } catch (error) {
+        passwordField.current.value = 'Error!'
+      }
+      setTimeout(() => {
+        passwordField.current.value = password
+      }, 500)
+      copyButtonRef.current.blur()
+    }
   }
 
   return (
@@ -108,14 +117,12 @@ const Home = () => {
             aria-label='Password'
             readOnly
             value={password}
+            ref={passwordField}
           />
           <button
             className='cursor-pointer transition duration-200 ease-in-out hoverable:hover:text-green-600 focus:text-green-600 focus:outline-none'
             aria-label='Copy to clipboard'
-            onClick={() => {
-              copyToClipboard()
-              copyButtonRef.current.blur()
-            }}
+            onClick={() => copyToClipboard()}
             ref={copyButtonRef}
           >
             <svg
