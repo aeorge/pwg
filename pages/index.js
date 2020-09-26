@@ -10,6 +10,7 @@ const Home = () => {
   const [password, setPassword] = useState('')
 
   const copyButtonRef = useRef(null)
+  const sliderRef = useRef(null)
   const generateButtonRef = useRef(null)
 
   // Generate random uppercase character
@@ -136,7 +137,24 @@ const Home = () => {
 
         <div className='h-6 sm:h-12' />
 
-        {/* TODO: Add range slider for password length */}
+        <div className='flex items-center space-x-4'>
+          <input
+            className='appearance-none w-full h-2 rounded-full cursor-pointer focus:outline-none'
+            type='range'
+            name='slider'
+            id='slider'
+            min='8'
+            max='40'
+            onChange={() => {
+              const { value } = sliderRef.current
+              setLength(value)
+            }}
+            ref={sliderRef}
+          />
+          <div className='w-8 text-xl text-right'>{length}</div>
+        </div>
+
+        <div className='h-4' />
 
         <div className='grid grid-cols-2 gap-4'>
           <button
