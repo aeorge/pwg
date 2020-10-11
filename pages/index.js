@@ -97,7 +97,7 @@ const Home = () => {
         <meta name='description' content='A simple password generator.' />
       </Head>
 
-      <main className='container max-w-2xl mx-auto px-4 font-roboto-mono text-white touch-action-manipulation sm:px-6'>
+      <main className='container max-w-2xl px-4 mx-auto text-white touch-action-manipulation sm:px-6'>
         <div className='h-12 sm:h-32' />
 
         <h1 className='text-6xl font-bold text-center'>PWG</h1>
@@ -110,9 +110,9 @@ const Home = () => {
 
         <div className='h-6 sm:h-12' />
 
-        <div className='flex justify-between items-center space-x-2 w-full h-12 pl-4 pr-2 rounded-lg bg-gray-900'>
+        <div className='flex items-center justify-between w-full h-12 pl-4 pr-2 space-x-2 bg-gray-900 rounded-lg'>
           <input
-            className='w-full bg-transparent tracking-widest truncate outline-none'
+            className='w-full tracking-widest truncate bg-transparent outline-none'
             type='text'
             aria-label='Generated password'
             readOnly
@@ -120,7 +120,7 @@ const Home = () => {
             ref={passwordField}
           />
           <button
-            className='cursor-pointer transition duration-200 ease-in-out hoverable:hover:text-green-600 focus:text-green-600 focus:outline-none'
+            className='transition duration-200 ease-in-out cursor-pointer hoverable:hover:text-green-600 focus:text-green-600 focus:outline-none'
             aria-label='Copy to clipboard'
             onClick={() => copyToClipboard()}
             ref={copyButtonRef}
@@ -146,7 +146,7 @@ const Home = () => {
 
         <div className='flex items-center space-x-4'>
           <input
-            className='appearance-none w-full h-2 rounded-full cursor-pointer focus:outline-none'
+            className='w-full h-2 rounded-full appearance-none cursor-pointer focus:outline-none'
             type='range'
             aria-label='Slider for password length'
             min='8'
@@ -200,7 +200,7 @@ const Home = () => {
         <div className='h-6 sm:h-12' />
 
         <button
-          className='w-full h-12 px-4 rounded-lg bg-green-700 truncate select-none transition duration-200 ease-in-out hoverable:hover:bg-green-600 focus:bg-green-600 focus:outline-none'
+          className='w-full h-12 px-4 truncate transition duration-200 ease-in-out bg-green-700 rounded-lg select-none hoverable:hover:bg-green-600 focus:bg-green-600 focus:outline-none'
           onClick={() => {
             generatePassword()
             generateButtonRef.current.blur()

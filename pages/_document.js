@@ -31,7 +31,7 @@ class MyDocument extends Document {
           <link rel='dns-prefetch' href='//fonts.googleapis.com' />
           <link rel='preconnect' href='https://fonts.gstatic.com/' />
         </Head>
-        <body>
+        <body className='font-roboto-mono'>
           <Main />
           <NextScript />
         </body>
