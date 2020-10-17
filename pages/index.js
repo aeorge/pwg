@@ -110,7 +110,8 @@ const Home = () => {
 
         <div className='h-6 sm:h-12' />
 
-        <div className='flex items-center justify-between w-full h-12 pl-4 pr-2 space-x-2 bg-gray-900 rounded-lg'>
+        {/* Password field */}
+        <div className='flex items-center justify-between w-full h-12 pl-4 pr-2 space-x-2 bg-gray-900 rounded'>
           <input
             className='w-full tracking-widest truncate bg-transparent outline-none'
             type='text'
@@ -144,6 +145,7 @@ const Home = () => {
 
         <div className='h-6 sm:h-12' />
 
+        {/* Range slider */}
         <div className='flex items-center space-x-4'>
           <input
             className='w-full h-2 rounded-full appearance-none cursor-pointer focus:outline-none'
@@ -162,9 +164,10 @@ const Home = () => {
 
         <div className='h-4' />
 
+        {/* Type selectors */}
         <div className='grid grid-cols-2 gap-4'>
           <button
-            className={`w-full h-12 px-4 border-2 rounded-lg truncate select-none transition duration-200 ease-in-out focus:outline-none ${
+            className={`w-full h-12 px-4 border-2 rounded truncate select-none transition duration-200 ease-in-out focus:outline-none ${
               uppercase && 'border-transparent text-black bg-white'
             }`}
             onClick={() => setUppercase(!uppercase)}
@@ -172,7 +175,7 @@ const Home = () => {
             uppercase
           </button>
           <button
-            className={`w-full h-12 px-4 border-2 rounded-lg truncate select-none transition duration-200 ease-in-out focus:outline-none ${
+            className={`w-full h-12 px-4 border-2 rounded truncate select-none transition duration-200 ease-in-out focus:outline-none ${
               lowercase && 'border-transparent text-black bg-white'
             }`}
             onClick={() => setLowercase(!lowercase)}
@@ -180,7 +183,7 @@ const Home = () => {
             lowercase
           </button>
           <button
-            className={`w-full h-12 px-4 border-2 rounded-lg truncate select-none transition duration-200 ease-in-out focus:outline-none ${
+            className={`w-full h-12 px-4 border-2 rounded truncate select-none transition duration-200 ease-in-out focus:outline-none ${
               numbers && 'border-transparent text-black bg-white'
             }`}
             onClick={() => setNumbers(!numbers)}
@@ -188,7 +191,7 @@ const Home = () => {
             numbers
           </button>
           <button
-            className={`w-full h-12 px-4 border-2 rounded-lg truncate select-none transition duration-200 ease-in-out focus:outline-none ${
+            className={`w-full h-12 px-4 border-2 rounded truncate select-none transition duration-200 ease-in-out focus:outline-none ${
               symbols && 'border-transparent text-black bg-white'
             }`}
             onClick={() => setSymbols(!symbols)}
@@ -199,8 +202,9 @@ const Home = () => {
 
         <div className='h-6 sm:h-12' />
 
+        {/* Generate button */}
         <button
-          className='w-full h-12 px-4 truncate transition duration-200 ease-in-out bg-green-700 rounded-lg select-none hoverable:hover:bg-green-600 focus:bg-green-600 focus:outline-none'
+          className='w-full h-12 px-4 truncate transition duration-200 ease-in-out bg-green-700 rounded select-none hoverable:hover:bg-green-600 focus:bg-green-600 focus:outline-none'
           onClick={() => {
             generatePassword()
             generateButtonRef.current.blur()
