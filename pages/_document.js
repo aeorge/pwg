@@ -8,7 +8,7 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html className='bg-black' lang='en'>
+      <Html lang='en'>
         <Head>
           <link
             rel='apple-touch-icon'
@@ -31,7 +31,7 @@ class MyDocument extends Document {
           <link rel='dns-prefetch' href='//fonts.googleapis.com' />
           <link rel='preconnect' href='https://fonts.gstatic.com/' />
         </Head>
-        <body className='font-roboto-mono'>
+        <body className='font-roboto-mono bg-dark-gray'>
           <Main />
           <NextScript />
         </body>

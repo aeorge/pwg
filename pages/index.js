@@ -172,7 +172,7 @@ const Home = () => {
         {/* Range slider */}
         <div className='flex items-center space-x-4'>
           <input
-            className='w-full h-2 rounded-full appearance-none cursor-pointer focus:outline-none'
+            className='w-full h-2 rounded-full appearance-none cursor-pointer focus:outline-none focus:shadow-outline-green'
             type='range'
             aria-label='Slider for password length'
             min='8'
@@ -191,7 +191,7 @@ const Home = () => {
         {/* Type selectors */}
         <div className='grid grid-cols-2 gap-4'>
           <button
-            className={`w-full h-12 px-4 border-2 rounded truncate select-none transition duration-200 ease-in-out focus:outline-none ${
+            className={`w-full h-12 px-4 border-2 rounded truncate select-none transition duration-200 ease-in-out focus:outline-none focus:shadow-outline-green ${
               uppercase && 'border-transparent text-black bg-white'
             }`}
             onClick={() => setUppercase(!uppercase)}
@@ -199,7 +199,7 @@ const Home = () => {
             uppercase
           </button>
           <button
-            className={`w-full h-12 px-4 border-2 rounded truncate select-none transition duration-200 ease-in-out focus:outline-none ${
+            className={`w-full h-12 px-4 border-2 rounded truncate select-none transition duration-200 ease-in-out focus:outline-none focus:shadow-outline-green ${
               lowercase && 'border-transparent text-black bg-white'
             }`}
             onClick={() => setLowercase(!lowercase)}
@@ -207,7 +207,7 @@ const Home = () => {
             lowercase
           </button>
           <button
-            className={`w-full h-12 px-4 border-2 rounded truncate select-none transition duration-200 ease-in-out focus:outline-none ${
+            className={`w-full h-12 px-4 border-2 rounded truncate select-none transition duration-200 ease-in-out focus:outline-none focus:shadow-outline-green ${
               numbers && 'border-transparent text-black bg-white'
             }`}
             onClick={() => setNumbers(!numbers)}
@@ -215,7 +215,7 @@ const Home = () => {
             numbers
           </button>
           <button
-            className={`w-full h-12 px-4 border-2 rounded truncate select-none transition duration-200 ease-in-out focus:outline-none ${
+            className={`w-full h-12 px-4 border-2 rounded truncate select-none transition duration-200 ease-in-out focus:outline-none focus:shadow-outline-green ${
               symbols && 'border-transparent text-black bg-white'
             }`}
             onClick={() => setSymbols(!symbols)}
@@ -228,7 +228,7 @@ const Home = () => {
 
         {/* Generate button */}
         <button
-          className='w-full h-12 px-4 truncate transition duration-200 ease-in-out bg-green-700 rounded select-none hoverable:hover:bg-green-600 focus:bg-green-600 focus:outline-none'
+          className='w-full h-12 px-4 truncate transition duration-200 ease-in-out bg-green-700 rounded select-none hoverable:hover:bg-green-600 focus:outline-none focus:shadow-outline-green'
           onClick={() => {
             generatePassword()
             generateButtonRef.current.blur()
