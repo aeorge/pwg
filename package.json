@@ -10,8 +10,8 @@
   "dependencies": {
     "autoprefixer": "^9.8.6",
     "next": "^9.5.5",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
-    "tailwindcss": "^1.9.1"
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
+    "tailwindcss": "^1.9.5"
   }
 }
